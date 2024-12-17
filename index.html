@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorteo de Participantes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Reemplaza 'logo.png' con la ruta a tu logo -->
+      <img src="logoGloria.png" alt="Logo" class="logo" />
+    </header>
+    <div class="container">
+      <h1>Sorteo de Participantes</h1>
+      <div class="input-section">
+        <label for="csvFile">Selecciona un archivo CSV:</label>
+        <input type="file" id="csvFile" accept=".csv" />
+        <button id="loadButton">Cargar Participantes</button>
+      </div>
+
+      <div class="participants-section">
+        <h2>Participantes</h2>
+        <ul id="participantsList"></ul>
+      </div>
+
+      <div class="action-section">
+        <button id="drawButton" disabled>Realizar Sorteo</button>
+      </div>
+
+      <div class="result-section">
+        <h2 id="resultTitle">Ganador/a</h2>
+        <p id="winner"></p>
+      </div>
+    </div>
+
+    <!-- Música de fondo -->
+    <audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
+
+    <!-- Contenedor para el confeti -->
+    <div id="confetti-container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

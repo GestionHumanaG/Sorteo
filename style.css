@@ -1,0 +1,206 @@
+/* Fuentes y Reset */
+body, h1, h2, p, label, button, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Fondo principal y contenedor */
+body {
+    background: #2B233B url('fondo.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    color: #FFFFFF;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-height: 80px;
+    filter: drop-shadow(0 0 5px #00000055);
+}
+
+.container {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: #000000;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2em;
+    color: #2B233B;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #2B233B;
+}
+
+.input-section, .participants-section, .action-section, .result-section {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #2B233B;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+    border: 1px solid #2B233B;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+}
+
+button {
+    background: #ED323D;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    color: #666666;
+}
+
+button:hover:not(:disabled) {
+    background: #C81C25;
+}
+
+#participantsList {
+    list-style: none;
+    padding: 0;
+    border: 1px solid #2B233B;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+#participantsList li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #000000;
+}
+
+#participantsList li:last-child {
+    border-bottom: none;
+}
+
+.result-section #resultTitle {
+    text-align: center;
+    font-size: 1.5em;
+    color: #2B233B;
+    margin-bottom: 10px;
+}
+
+.result-section p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ED323D;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Efectos para mejorar UX */
+input[type="file"]:focus,
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ED323D;
+}
+
+.container h1,
+.container h2 {
+    text-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ED323D;
+    border-radius: 4px;
+}
+
+/* Animación para la cuenta regresiva */
+.countdown-animate {
+    animation: countdownScale 1s ease-in-out infinite alternate;
+}
+
+@keyframes countdownScale {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+/* Confetti */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #ED323D;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        opacity: 1;
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(var(--x)) translateY(var(--y)) rotate(var(--r));
+    }
+}
